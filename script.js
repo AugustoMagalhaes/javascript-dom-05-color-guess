@@ -1,7 +1,18 @@
 const ballsList = document.getElementsByClassName('ball');
+const answerPgraph = document.getElementById('answer');
+const rgbPgraph = document.getElementById('rgb-color');
 
 function randColor() {
   return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+}
+
+function shuffleOrder(list) {
+  for (let index = 0; index < list.length; index += 1) {
+    const element = list[index];
+    const randNumber = Math.floor(Math.random() * 36); // Para evitar 'order' com o mesmo valor, '36' foi arbitrario.
+    element.style.order = randNumber;
+  }
+  return list;
 }
 
 function setColors() {
@@ -9,6 +20,22 @@ function setColors() {
     const ballItem = ballsList[index];
     const ballColor = ballItem.style;
     ballColor.backgroundColor = randColor();
+    if (index === 0) {
+      const correctColor = ballColor.backgroundColor;
+      rgbPgraph.innerText = correctColor.split('rgb').join('');
+    }
+    ballItem.addEventListener('click', colorWinner);
+  }
+  shuffleOrder(ballsList);
+}
+
+function colorWinner(event) {
+  const circle = event.target;
+  const stringCorrectColor = `rgb${rgbPgraph.innerText}`;
+  if (circle.style.backgroundColor === stringCorrectColor) {
+    answerPgraph.innerText = 'Acertou!';
+  } else {
+    answerPgraph.innerText = 'Errou! Tente novamente!';
   }
 }
 
