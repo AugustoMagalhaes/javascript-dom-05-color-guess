@@ -15,6 +15,16 @@ function shuffleOrder(list) {
   return list;
 }
 
+function colorWinner(event) {
+  const circle = event.target;
+  const stringCorrectColor = `rgb${rgbPgraph.innerText}`;
+  if (circle.style.backgroundColor === stringCorrectColor) {
+    answerPgraph.innerText = 'Acertou!';
+  } else {
+    answerPgraph.innerText = 'Errou! Tente novamente!';
+  }
+}
+
 function setColors() {
   for (let index = 0; index < ballsList.length; index += 1) {
     const ballItem = ballsList[index];
@@ -27,16 +37,6 @@ function setColors() {
     ballItem.addEventListener('click', colorWinner);
   }
   shuffleOrder(ballsList);
-}
-
-function colorWinner(event) {
-  const circle = event.target;
-  const stringCorrectColor = `rgb${rgbPgraph.innerText}`;
-  if (circle.style.backgroundColor === stringCorrectColor) {
-    answerPgraph.innerText = 'Acertou!';
-  } else {
-    answerPgraph.innerText = 'Errou! Tente novamente!';
-  }
 }
 
 // Requisito 4 - Criaçao aleatoria das cores das 'balls' ao carregar a pagina.
