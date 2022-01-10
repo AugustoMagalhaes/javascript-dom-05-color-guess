@@ -81,4 +81,8 @@ body {
   background: #560970;
 }
 
+#score {
+  font-size: 30px;
+  margin: 10px 0;
+}
 

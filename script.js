@@ -2,9 +2,16 @@ const ballsList = document.getElementsByClassName('ball');
 const answerPgraph = document.getElementById('answer');
 const rgbPgraph = document.getElementById('rgb-color');
 const resetBtn = document.getElementById('reset-game');
+const scoreDisplay = document.getElementById('score');
+let score = 0;
 
 function randColor() {
   return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+}
+
+function setScore() {
+  scoreDisplay.innerText = `Placar: ${score}`;
+  
 }
 
 function shuffleOrder(list) {
@@ -21,8 +28,12 @@ function colorWinner(event) {
   const stringCorrectColor = `rgb${rgbPgraph.innerText}`;
   if (circle.style.backgroundColor === stringCorrectColor) {
     answerPgraph.innerText = 'Acertou!';
+    score += 3;
+    setScore();
   } else {
     answerPgraph.innerText = 'Errou! Tente novamente!';
+    score = 0;
+    setScore();
   }
 }
 
@@ -48,4 +59,7 @@ function resetGame() {
 resetBtn.addEventListener('click', resetGame);
 
 // Requisito 4 - Criaçao aleatoria das cores das 'balls' ao carregar a pagina.
-window.onload = setColors;
+window.onload = function () {
+  setColors();
+  setScore();
+}
