@@ -11,7 +11,6 @@ function randColor() {
 
 function setScore() {
   scoreDisplay.innerText = `Placar: ${score}`;
-  
 }
 
 function shuffleOrder(list) {
@@ -23,16 +22,17 @@ function shuffleOrder(list) {
   return list;
 }
 
+// Requisito 5 - Ao clicar em um círculo, dispoe na tela se o jogador acertou/errou.
 function colorWinner(event) {
   const circle = event.target;
   const stringCorrectColor = `rgb${rgbPgraph.innerText}`;
   if (circle.style.backgroundColor === stringCorrectColor) {
     answerPgraph.innerText = 'Acertou!';
-    score += 3;
+    score += 3; // Requisito 7.1 - Incrementa 3 pontos para acertos no jogo
     setScore();
   } else {
     answerPgraph.innerText = 'Errou! Tente novamente!';
-    score = 0;
+    score = (score === 0) ? 0 : score -= 1; // Requisito 7.2 - Decrementa 1 ponto para erros no jogo.
     setScore();
   }
 }
@@ -51,6 +51,7 @@ function setColors() {
   shuffleOrder(ballsList);
 }
 
+// Requisito 6 - Botao para resetar o jogo
 function resetGame() {
   setColors();
   answerPgraph.innerText = 'Escolha uma cor';
@@ -62,4 +63,4 @@ resetBtn.addEventListener('click', resetGame);
 window.onload = function () {
   setColors();
   setScore();
-}
+};

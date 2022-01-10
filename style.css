@@ -8,14 +8,6 @@ body {
   color: #f5f5f5;
 }
 
-.box {
-  width: 1366px;
-  height: 766px;
-  border: 2px solid white;
-  position: absolute;
-  z-index: -1;
-}
-
 .title-container {
   display: flex;
   justify-content: center;
@@ -31,8 +23,7 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
-  align-items: center;
-  border: 2px solid red;
+  align-items: center;  
   width: 70%;
   min-height: 500px;
   margin: 20px auto;
@@ -47,8 +38,7 @@ body {
 .ball-container {
   display: flex;
   justify-content: space-evenly;  
-  align-items: center;
-  border: 1px solid white;
+  align-items: center;  
   width: 80%;
   height: 150px;
   margin: 20px auto;
@@ -72,7 +62,7 @@ body {
   box-shadow: rgba(255, 0, 0, 0.1) 1000 2px 4px;
   color: #FFFFFF;
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 120px;
   height: 50px;
 }
