@@ -1,6 +1,7 @@
 const ballsList = document.getElementsByClassName('ball');
 const answerPgraph = document.getElementById('answer');
 const rgbPgraph = document.getElementById('rgb-color');
+const resetBtn = document.getElementById('reset-game');
 
 function randColor() {
   return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
@@ -38,6 +39,13 @@ function setColors() {
   }
   shuffleOrder(ballsList);
 }
+
+function resetGame() {
+  setColors();
+  answerPgraph.innerText = 'Escolha uma cor';
+}
+
+resetBtn.addEventListener('click', resetGame);
 
 // Requisito 4 - Criaçao aleatoria das cores das 'balls' ao carregar a pagina.
 window.onload = setColors;
