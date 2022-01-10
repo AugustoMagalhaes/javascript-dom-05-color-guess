@@ -29,8 +29,9 @@ body {
 
 .main-container {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
   border: 2px solid red;
   width: 70%;
   min-height: 500px;
@@ -38,5 +39,25 @@ body {
 }
 
 #rgb-color {
+  /* display: block; */
   font-size: 40px;
+  margin-top: 10px;  
 }
+
+.ball-container {
+  display: flex;
+  justify-content: space-evenly;  
+  align-items: center;
+  border: 1px solid white;
+  width: 80%;
+  height: 150px;
+  margin: 20px auto;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+
