@@ -6,7 +6,9 @@ const scoreDisplay = document.getElementById('score');
 let score = 0;
 
 function randColor() {
-  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256,
+  )}, ${Math.floor(Math.random() * 256)})`;
 }
 
 function setScore() {
@@ -30,9 +32,11 @@ function colorWinner(event) {
     answerPgraph.innerText = 'Acertou!';
     score += 3; // Requisito 7.1 - Incrementa 3 pontos para acertos no jogo
     setScore();
+    setTimeout(() => resetGame(), 2000);
   } else {
     answerPgraph.innerText = 'Errou! Tente novamente!';
-    score = (score === 0) ? 0 : score -= 1; // Requisito 7.2 - Decrementa 1 ponto para erros no jogo.
+    setTimeout(() => (answerPgraph.innerText = 'Escolha uma cor'), 1000);
+    score = score === 0 ? 0 : (score -= 1); // Requisito 7.2 - Decrementa 1 ponto para erros no jogo.
     setScore();
   }
 }
