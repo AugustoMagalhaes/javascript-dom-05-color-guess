@@ -14,7 +14,7 @@ Color guess é um jogo simples em que um display apresenta uma cor RGB (XXX, YYY
 ### 🚀 Como rodar localmente:
 
 Clone o repositório:
-git@github.com:AugustoMagalhaes/javascript-dom-05-color-guess.git
+`git clone git@github.com:AugustoMagalhaes/javascript-dom-05-color-guess.git`
 
 Abra a pasta do projeto:
 `cd javascript-dom-05-color-guess`
