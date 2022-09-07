@@ -16,29 +16,30 @@ body {
 
 #title {
   margin-top: 20px;
-  font-size: 70px;  
+  font-size: 70px;
 }
 
 .main-container {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
-  align-items: center;  
+  align-items: center;
   width: 70%;
   min-height: 500px;
   margin: 20px auto;
 }
 
-#rgb-color {
+#rgb-color,
+.rgb-title {
   /* display: block; */
   font-size: 40px;
-  margin-top: 10px;  
+  margin-top: 10px;
 }
 
 .ball-container {
   display: flex;
-  justify-content: space-evenly;  
-  align-items: center;  
+  justify-content: space-evenly;
+  align-items: center;
   width: 80%;
   height: 150px;
   margin: 20px auto;
@@ -57,10 +58,10 @@ body {
 
 #reset-game {
   background-color: initial;
-  background-image: linear-gradient(-180deg, #714281, #440758);
+  background-image: linear-gradient(-180deg, #444281, #716fb3);
   border-radius: 5px;
   box-shadow: rgba(255, 0, 0, 0.1) 1000 2px 4px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 20px;
   margin-top: 20px;
   width: 120px;
@@ -75,4 +76,3 @@ body {
   font-size: 30px;
   margin: 10px 0;
 }
-
