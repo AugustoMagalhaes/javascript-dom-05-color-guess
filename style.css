@@ -31,7 +31,6 @@ body {
 
 #rgb-color,
 .rgb-title {
-  /* display: block; */
   font-size: 40px;
   margin-top: 10px;
 }
@@ -76,3 +75,79 @@ body {
   font-size: 30px;
   margin: 10px 0;
 }
+
+@media (max-width: 500px) {
+  body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .title-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+    height: 10%;
+  }
+
+  #title {
+    font-size: 36px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    height: 100%;
+  }
+
+  #rgb-color,
+  .rgb-title {
+    font-size: 24px;
+    margin-top: 5px;
+  }
+
+  .ball-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+    border: 2px solid white;
+    /* height: 50%; */
+  }
+
+  .ball {
+    width: 25%;
+    height: 45%;
+    border: 1px solid white;
+    border-radius: 100%;
+    margin: auto 5px;
+  }
+
+  #score {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  #answer {
+    font-size: 20px;
+  }
+
+  #reset-game {
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+  }
+}
+/* border: 2px solid white; */
